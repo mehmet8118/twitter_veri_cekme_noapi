@@ -32,7 +32,13 @@ class sel:
         self.name = name
         self.cursor = cursor
 
-        self.req = requests.get("https://api.twitter.com/1.1/followers/list.json?cursor=" + str(self.cursor) +"&screen_name="+ str(self.name) +"&count=200", headers=headers)
+        self.req = requests.get("https://api.twitter.com/1.1/followers/list.json?cursor=" 
+                                + str(self.cursor) 
+                                +"&screen_name="
+                                + str(self.name) 
+                                +"&count=200", 
+                                headers=headers)
+        
         self.veriler = self.req.text
         return self.veriler
 
