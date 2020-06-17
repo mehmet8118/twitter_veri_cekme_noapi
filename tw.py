@@ -32,7 +32,7 @@ class sel:
         self.name = name
         self.cursor = cursor
 
-        self.req = requests.get("https://api.twitter.com/1.1/followers/list.json?cursor=" + str(self.cursor) +"&screen_name="+ str(self.name) +"&count=200", headers=header)
+        self.req = requests.get("https://api.twitter.com/1.1/followers/list.json?cursor=" + str(self.cursor) +"&screen_name="+ str(self.name) +"&count=200", headers=headers)
         self.veriler = self.req.text
         return self.veriler
 
@@ -64,7 +64,8 @@ while True:
                          "Lokasyon: " + location+" | \n"+
                          "Açıklama: " + description+" | \n"+
                          "Takipçi Sayisi: " + str(takipci_sayisi) + " | \n" +
-                         "Takip Edilen: " + str(takip_edilen) + " | \n"
+                         "Takip Edilen: " + str(takip_edilen) + " | \n\n"
+                         + "-"*50
                             )
 
 
